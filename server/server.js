@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 //
 app.use(require('./rutas/usuario'));
 
-mongoose.connect('mongodb://localhost:27017/cafe', { useNewUrlParser: true, useCreateIndex: true }, (err, resp) => {
+mongoose.connect(process.env.URLDB, (err, resp) => {
     if (err) throw err;
 
     console.log('Base de datos ONLINE');
